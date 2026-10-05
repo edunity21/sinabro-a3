@@ -220,3 +220,38 @@
 .editorial .pbox p,.editorial .pbox p b{color:var(--ink)}
 .editorial .bout{background:var(--paper)}
 .editorial .meter{border-radius:var(--radius-card)}
+/* Separator repair: paint one-sided rules independently of rounded corners.
+   border-image keeps the existing border widths and layout, while preventing
+   the stroke from tapering around a corner with no adjacent border. */
+.editorial .plat,
+.editorial .rupa-nav button,
+.editorial .fields a,
+.editorial .fields li,
+.editorial .weights>div,
+.editorial .kw article,
+.editorial .honest>div {
+  border-image:linear-gradient(var(--ink),var(--ink)) 1;
+}
+.editorial .plat:hover {
+  border-image-source:linear-gradient(var(--editorial-red),var(--editorial-red));
+}
+.editorial .fields a:hover {
+  border-image-source:linear-gradient(var(--c),var(--c));
+}
+.editorial .seg button,
+.editorial .filt button,
+.editorial .proc .foot div,
+.editorial .edition-room .rh details.info {
+  border-image:linear-gradient(var(--line),var(--line)) 1;
+}
+.editorial .seg button.on,
+.editorial .seg button:hover {
+  border-image-source:linear-gradient(var(--ink),var(--ink));
+}
+.editorial .cases article,
+.editorial .bx {
+  border-image:linear-gradient(var(--hs),var(--hs)) 1;
+}
+.editorial details.fold {
+  border-image:linear-gradient(to bottom,var(--ink),var(--line)) 1;
+}
